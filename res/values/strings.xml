@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Car Remote</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="btnRight_string">Right</string>
+    <string name="btnLeft_string">Left</string>
+    <string name="btnForward_string">Forward</string>
+    <string name="btnBackwards_string">Backward</string>
+    <string name="btnStop_string">Stop</string>
+
+</resources>
