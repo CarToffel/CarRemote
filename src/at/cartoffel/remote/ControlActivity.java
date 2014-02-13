@@ -17,7 +17,8 @@ import android.widget.Toast;
 
 public class ControlActivity extends Activity {
 	Thread orders;
-	
+	static boolean leftpressed=false;
+	static boolean rightpressed=false;
 	TextView debugView;
 	
 	@Override
@@ -54,6 +55,7 @@ public class ControlActivity extends Activity {
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
 					debugView.setText("");
+					
 				}
 				return true;
 			}
@@ -82,10 +84,13 @@ public class ControlActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					debugView.setText("left pressed");
+					leftpressed=true;
 					send("l");
+					
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
 					debugView.setText("");
+					leftpressed=false;
 				}
 				return true;
 			}
@@ -98,10 +103,12 @@ public class ControlActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					debugView.setText("right pressed");
+					rightpressed=true;
 					send("r");
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
 					debugView.setText("");
+					rightpressed=false;
 				}
 				return true;
 			}
@@ -113,7 +120,7 @@ public class ControlActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Log.d("stop button", "stop pressed");
-				send("s");
+				//send("s");
 			}
 		});
 	}
