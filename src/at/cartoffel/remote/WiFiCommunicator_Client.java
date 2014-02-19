@@ -39,7 +39,7 @@ public class WiFiCommunicator_Client implements Runnable {
 
 	@Override
 	public void run() {
-		while (ControlActivity.rightpressed==true || ControlActivity.leftpressed==true) {
+		while (ControlActivity.pressed==true) {
 			try {
 				byte[] m = data.getBytes();
 				packet = new DatagramPacket(m, data.length(), this.ip,
