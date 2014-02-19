@@ -83,13 +83,13 @@ public class ControlActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					debugView.setText("left pressed");
-					pressed=true;
+					ControlActivity.pressed=true;
 					send("l");
 					
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
 					debugView.setText("");
-					pressed=false;
+					ControlActivity.pressed=false;
 				}
 				return true;
 			}
@@ -102,12 +102,12 @@ public class ControlActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					debugView.setText("right pressed");
-					pressed=true;
+					ControlActivity.pressed=true;
 					send("r");
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
 					debugView.setText("");
-					pressed=false;
+					ControlActivity.pressed=false;
 				}
 				return true;
 			}
