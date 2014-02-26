@@ -6,6 +6,7 @@ import java.net.DatagramSocket;
 import java.net.SocketException;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -50,10 +51,10 @@ public class WiFiCommunicator_Server implements Runnable {
 
 				// Convert the contents to a string, and display them
 				String msg = new String(buffer, 0, packet.getLength());
-//				System.out.println(packet.getAddress().getHostName() + ": "
-//						+ msg);
-				Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
 
+				String output = packet.getAddress().getHostName() + ": " + msg;
+				
+				Log.d("message", output);
 				// Reset the length of the packet before reusing it.
 				packet.setLength(buffer.length);
 			}

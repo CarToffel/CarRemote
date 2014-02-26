@@ -1,11 +1,8 @@
 package at.cartoffel.remote;
 
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.app.Activity;
 import android.util.Log;
-import android.view.InputEvent;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,11 +10,10 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ControlActivity extends Activity {
 	Thread orders;
-	static boolean pressed=false;
+	static boolean pressed = false;
 	TextView debugView;
 	
 	@Override
