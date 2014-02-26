@@ -46,11 +46,12 @@ public class ControlActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					debugView.setText("forward pressed");
+					ControlActivity.pressed = true;
 					send("f");
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
 					debugView.setText("");
-					
+					ControlActivity.pressed = false;
 				}
 				return true;
 			}
@@ -63,10 +64,12 @@ public class ControlActivity extends Activity {
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					debugView.setText("backward pressed");
+					ControlActivity.pressed = true;
 					send("b");
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
 					debugView.setText("");
+					ControlActivity.pressed = false;
 				}
 				return true;
 			}
