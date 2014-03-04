@@ -14,7 +14,6 @@ import android.widget.TextView;
 public class ControlActivity extends Activity {
 	Thread orders;
 	static boolean pressed = false;
-	TextView debugView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +22,6 @@ public class ControlActivity extends Activity {
 		
 		Thread receive = new Thread(new WiFiCommunicator_Server(this));
 		receive.start();
-		
-		debugView = (TextView) findViewById(R.id.debugView);
 		
 		setButtonListeners();
 
@@ -45,12 +42,11 @@ public class ControlActivity extends Activity {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					debugView.setText("forward pressed");
+					Log.d("forward button", "forward pressed");
 					ControlActivity.pressed = true;
 					send("f");
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
-					debugView.setText("");
 					ControlActivity.pressed = false;
 				}
 				return true;
@@ -63,12 +59,11 @@ public class ControlActivity extends Activity {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					debugView.setText("backward pressed");
+					Log.d("backward button", "backward pressed");
 					ControlActivity.pressed = true;
 					send("b");
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
-					debugView.setText("");
 					ControlActivity.pressed = false;
 				}
 				return true;
@@ -81,13 +76,11 @@ public class ControlActivity extends Activity {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					debugView.setText("left pressed");
+					Log.d("left button", "left pressed");
 					ControlActivity.pressed=true;
 					send("l");
-					
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
-					debugView.setText("");
 					ControlActivity.pressed=false;
 				}
 				return true;
@@ -100,12 +93,11 @@ public class ControlActivity extends Activity {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					debugView.setText("right pressed");
+					Log.d("right button", "right pressed");
 					ControlActivity.pressed=true;
 					send("r");
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
-					debugView.setText("");
 					ControlActivity.pressed=false;
 				}
 				return true;
