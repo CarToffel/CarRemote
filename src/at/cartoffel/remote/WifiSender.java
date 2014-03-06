@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 import android.content.Context;
 import android.widget.Toast;
 
-public class WiFiCommunicator_Client implements Runnable {
+public class WifiSender implements Runnable {
 	private Context context;
 	private DatagramSocket socket;
 	private InetAddress ip;
@@ -20,7 +20,7 @@ public class WiFiCommunicator_Client implements Runnable {
 	private boolean pressed;
 
 	// Constructor
-	public WiFiCommunicator_Client(String data, Context context) {
+	public WifiSender(String data, Context context) {
 		try {
 			this.socket = new DatagramSocket();
 			this.ip = InetAddress.getByName("10.0.0.99");

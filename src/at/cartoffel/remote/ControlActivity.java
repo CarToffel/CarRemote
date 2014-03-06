@@ -20,7 +20,7 @@ public class ControlActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_control);
 		
-		Thread receive = new Thread(new WiFiCommunicator_Server(this));
+		Thread receive = new Thread(new WifiReceiver(this));
 		receive.start();
 		
 		setButtonListeners();
@@ -28,7 +28,7 @@ public class ControlActivity extends Activity {
     }
 	
 	public void send(String order){
-		orders = new Thread(new WiFiCommunicator_Client(order, this));
+		orders = new Thread(new WifiSender(order, this));
 		orders.start();
 	}
 	

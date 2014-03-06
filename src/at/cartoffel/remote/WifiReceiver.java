@@ -15,7 +15,7 @@ import android.widget.Toast;
  * @author Samuel Hammer
  * 
  */
-public class WiFiCommunicator_Server implements Runnable {
+public class WifiReceiver implements Runnable {
 
 	Context context;
 
@@ -24,7 +24,7 @@ public class WiFiCommunicator_Server implements Runnable {
 	 * 
 	 * @param context
 	 */
-	public WiFiCommunicator_Server(Context context) {
+	public WifiReceiver(Context context) {
 		this.context = context;
 	}
 
