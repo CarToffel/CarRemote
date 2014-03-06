@@ -20,29 +20,19 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="vertical" >
-            </LinearLayout>
-
             <Button
                 android:id="@+id/btnForward"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/design"
                 android:text="F" />
-      
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:orientation="vertical" >
-            </LinearLayout>
 
             <Button
                 android:id="@+id/btnBackward"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/design"
                 android:text="B" />
 
@@ -62,18 +52,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:orientation="vertical" >
-
-        </LinearLayout>
-
         <Button
             android:id="@+id/btnPark"
             android:layout_width="210dp"
             android:layout_height="40dp"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/design"
             android:text="PARK" />
 
@@ -81,7 +65,7 @@
             android:id="@+id/btnStop"
             android:layout_width="210dp"
             android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/design"
             android:text="STOP" />
 
