@@ -20,6 +20,7 @@ public class ControlActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_control);
 		
+		//Start thread for receiving messanges from Arduino Microcontroller
 		Thread receive = new Thread(new WifiReceiver(this));
 		receive.start();
 		

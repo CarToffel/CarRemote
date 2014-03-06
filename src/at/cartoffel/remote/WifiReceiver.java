@@ -21,7 +21,6 @@ public class WifiReceiver implements Runnable {
 
 	/**
 	 * Constructor
-	 * 
 	 * @param context
 	 */
 	public WifiReceiver(Context context) {
@@ -31,10 +30,10 @@ public class WifiReceiver implements Runnable {
 	@Override
 	public void run() {
 		try {
-			int port = 8888;
+			int port = 6666;
 
 			// Create a socket to listen on the port.
-			DatagramSocket socket = new DatagramSocket(port);
+			DatagramSocket dsocket = new DatagramSocket(port);
 
 			// Create a buffer to read datagrams into. If a
 			// packet is larger than this buffer, the
@@ -47,14 +46,12 @@ public class WifiReceiver implements Runnable {
 			// Now loop forever, waiting to receive packets and printing them.
 			while (true) {
 				// Wait to receive a datagram
-				socket.receive(packet);
+				dsocket.receive(packet);
 
 				// Convert the contents to a string, and display them
 				String msg = new String(buffer, 0, packet.getLength());
+				Log.d("OUTPUT", msg);
 
-				String output = packet.getAddress().getHostName() + ": " + msg;
-				
-				Log.d("message", output);
 				// Reset the length of the packet before reusing it.
 				packet.setLength(buffer.length);
 			}
