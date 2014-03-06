@@ -1,7 +1,11 @@
 package at.cartoffel.remote;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -13,7 +17,14 @@ import android.widget.TextView;
 
 public class ControlActivity extends Activity {
 	Thread orders;
+	
 	static boolean pressed = false;
+	
+	static TextView textview_frontDistance;
+	static TextView textview_backDistance;
+	static TextView textview_leftDistance;
+	static TextView textview_rightDistance;
+	static TextView textview_speed;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +36,47 @@ public class ControlActivity extends Activity {
 		receive.start();
 		
 		setButtonListeners();
+		
+		textview_frontDistance = (TextView) findViewById(R.id.textview_frontDistance);
+		textview_frontDistance.setTextColor(Color.WHITE);
+		textview_backDistance = (TextView) findViewById(R.id.textview_backDistance);
+		textview_backDistance.setTextColor(Color.WHITE);
+		textview_leftDistance = (TextView) findViewById(R.id.textview_leftDistance);
+		textview_leftDistance.setTextColor(Color.WHITE);
+		textview_rightDistance = (TextView) findViewById(R.id.textview_rightDistance);
+		textview_rightDistance.setTextColor(Color.WHITE);
+		textview_speed = (TextView) findViewById(R.id.textview_speed);
+		textview_speed.setTextColor(Color.WHITE);
+
+		//Update the TextViews for distances every 500ms 
+		Timer updateTimer = new Timer("sensorUpdate");
+		updateTimer.scheduleAtFixedRate(new TimerTask() {
+			public void run() {
+				updateUI();
+			}
+		}, 0, 500);
 
     }
 	
 	public void send(String order){
 		orders = new Thread(new WifiSender(order, this));
 		orders.start();
+	}
+	
+	/**
+	 * Updates the UI so that the proper distance is shown
+	 */
+	public void updateUI()
+	{	
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				ControlActivity.textview_frontDistance.invalidate();
+				ControlActivity.textview_backDistance.invalidate();
+				ControlActivity.textview_leftDistance.invalidate();
+				ControlActivity.textview_rightDistance.invalidate();
+			}
+		});
 	}
 	
 	/**
@@ -116,6 +162,7 @@ public class ControlActivity extends Activity {
 		});
 	}
 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
