@@ -1,0 +1,139 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nes_original_v2"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ControlActivity" >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btnForward"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/design"
+                android:text="F" />
+
+            <Button
+                android:id="@+id/btnBackward"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/design"
+                android:text="B" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="80dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textview_frontDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Front distance"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textview_backDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back distance"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textview_leftDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Left distance"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textview_rightDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Right distance"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textview_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Speed"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnPark"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/design"
+            android:text="PARK" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/design"
+            android:text="STOP" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnLeft"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/design"
+                android:text="L" />
+
+            <Button
+                android:id="@+id/btnRight"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:background="@drawable/design"
+                android:text="R" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
