@@ -65,7 +65,7 @@ public class WifiReceiver implements Runnable {
 				ControlActivity.textview_frontDistance.post(new Runnable() {
 					@Override
 					public void run() {
-						ControlActivity.textview_frontDistance.setText("Front Distance: " + frontDistance);
+						ControlActivity.textview_frontDistance.setText(frontDistance);
 					}
 				});
 				
@@ -73,7 +73,7 @@ public class WifiReceiver implements Runnable {
 				ControlActivity.textview_backDistance.post(new Runnable() {
 					@Override
 					public void run() {
-						ControlActivity.textview_backDistance.setText("Back Distance:" + backDistance);
+						ControlActivity.textview_backDistance.setText(backDistance);
 					}
 				});
 				
@@ -81,7 +81,7 @@ public class WifiReceiver implements Runnable {
 				ControlActivity.textview_leftDistance.post(new Runnable() {
 					@Override
 					public void run() {
-						ControlActivity.textview_leftDistance.setText("Left Distance: " + leftDistance);
+						ControlActivity.textview_leftDistance.setText(leftDistance);
 					}
 				});
 				
@@ -89,7 +89,7 @@ public class WifiReceiver implements Runnable {
 				ControlActivity.textview_rightDistance.post(new Runnable() {
 					@Override
 					public void run() {
-						ControlActivity.textview_rightDistance.setText("Right Distance: " + rightDistance);
+						ControlActivity.textview_rightDistance.setText(rightDistance);
 					}
 				});
 				

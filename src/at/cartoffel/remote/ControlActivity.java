@@ -3,6 +3,9 @@ package at.cartoffel.remote;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Color;
@@ -19,12 +22,15 @@ public class ControlActivity extends Activity {
 	Thread orders;
 	
 	static boolean pressed = false;
-	
+
+    //Create references for showing the distances
 	static TextView textview_frontDistance;
 	static TextView textview_backDistance;
 	static TextView textview_leftDistance;
 	static TextView textview_rightDistance;
 	static TextView textview_speed;
+
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +60,13 @@ public class ControlActivity extends Activity {
 			public void run() {
 				updateUI();
 			}
-		}, 0, 500);
+		}, 0, 200);
+
+        Canvas canvas = new Canvas();
+        Paint paint = new Paint();
+        paint.setColor(Color.WHITE);
+
+        canvas.drawRect(50,50,50,50,paint);
 
     }
 	
@@ -162,7 +174,6 @@ public class ControlActivity extends Activity {
 		});
 	}
 
-	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
