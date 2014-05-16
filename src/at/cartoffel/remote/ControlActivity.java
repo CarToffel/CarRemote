@@ -165,11 +165,34 @@ public class ControlActivity extends Activity {
 		
 		//Stop Button
 		Button btnStop = (Button) findViewById(R.id.btnStop);
-		btnStop.setOnClickListener(new OnClickListener() {
+		btnStop.setOnTouchListener(new OnTouchListener() {
 			@Override
-			public void onClick(View v) {
-				Log.d("stop button", "stop pressed");
-				send("s");
+			public boolean onTouch(View v, MotionEvent event) {
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					Log.d("stop button", "stop pressed");
+					ControlActivity.pressed = true;
+					send("s");
+				}
+				if (event.getAction() == MotionEvent.ACTION_UP) {
+					ControlActivity.pressed = false;
+				}
+				return true;
+			}
+		});
+
+		Button btnPark = (Button) findViewById(R.id.btnPark);
+		btnPark.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					Log.d("park button", "park pressed");
+					ControlActivity.pressed = true;
+					send("p");
+				}
+				if (event.getAction() == MotionEvent.ACTION_UP) {
+					ControlActivity.pressed = false;
+				}
+				return true;
 			}
 		});
 	}
